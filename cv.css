@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-page1{
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    width: 50%;
+    overflow-y: auto;
+}
+.personal1{
+    display: flex;
+    flex-direction: column;
+    background: #ddd;
+    padding: 10px 10px 0 10px;
+}
+.img-name1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.user-img-name1{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+.user-img1{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.all-personal-info1{
+    display: flex;
+    flex-direction: column;
+}
+.inlines1{
+    padding-left: 3px;
+}
+.inlines1 ul{
+    display: block;
+}
+.inlines1 ul li{
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 8px;
+    margin: 6px 4px 6px 0;
+    border-right: 1px solid black;
+}
+.about-me1{
+    display: none;
+    flex-direction: column;
+}
+.about-me1 p{
+    line-height: 20px;
+}
+.adventure1{
+    padding: 10px;
+}
+.education1,.work1,.language1,.qualification1{
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid black;
+    padding-bottom: 2px;
+    font-size: 1.2em;
+}
+.edu-work-lang-qual1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.edu-work-lang-qual1 h2{
+    border-bottom: 2px solid black;
+}
+.education-info1,.job-info1{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.education-info1 div,.job-info1 div,.qualification-info1 div{
+    display: flex;
+    gap: 10px;
+}
+.download-div1{
+    /* display: none; */
+    display: flex;
+    justify-content: right;
+    width: 50%;
+}
+#download1{
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: dodgerblue;
+    height: 34px;
+    /* border-radius: 4px; */
+    cursor: pointer;
+    padding: 6px;
+    color: #fff;
+    font-weight: 600;
+}
+#download1:hover{
+    background: rgb(15, 98, 180);
+}

@@ -1,0 +1,582 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    /* display: none; */
+}
+.progress{
+    flex-basis: 90%;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    color: white;
+}
+.start-block,.personal-info-block,.background-block,.template-block{
+    width: calc(50vw/4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.start,.personal-info,.background,.template{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start{
+    justify-content: right !important;
+}
+.template{
+    justify-content: left !important;
+}
+.line{
+    height: 2px;
+    background: gray;
+    flex-basis: calc(50% - 20px);
+}
+.start-circle,.personal-info-circle,.background-circle,.template-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 999;
+}
+.progress svg{
+    fill: gray;
+    width: 50%;
+    height: 55%;
+}
+.progress-next{
+    display: flex;
+    height: 80px;
+}
+#next,#previous{
+    flex: 1;
+    user-select: none;
+    border: none;
+    font-size: 2em;
+    padding: 3px 8px;
+    cursor: pointer;
+    background: #00FF00;
+}
+.stage-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+.stage1{
+    position: fixed;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    transition: 2s;
+}
+.opacity0{
+    height: 80px;
+    width: 100%;
+    opacity: 0;
+}
+.opacity-more{
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.message h1{
+    font-size: 3em;
+}
+.message p{
+    font-size: 2em;
+}
+#startcv{
+    border: none;
+    font-size: 3em;
+    padding: 3px 20px;
+    border-radius: 7px;
+    background: #00FF00;
+    cursor: pointer;
+}
+.stage2{
+    position: absolute;
+    background: #ddd;
+    transform: translateX(150%);
+    width: 50%;
+    height: 580px;
+}
+#form2{
+    display: flex;
+    height: 100%;
+}
+.img-container{
+    padding-top: 10px;
+    flex-basis: 17%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+.img-div{
+    display: flex;
+    height: 100px;
+    width: 100px;
+}
+.image{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.insert-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.insert-img span{
+    transform: lowercase;
+}
+.insert-img input{
+    width: 68%;
+}
+.personal-information{
+    overflow-y: auto;
+    flex: 1;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.personal-information input{
+    height: 28px;
+    padding: 2px 5px 2px 5px;
+}
+.name-surname-div{
+    display: flex;
+    justify-content: space-between;
+}
+.name-surname-div input{
+    width: 85%;
+}
+.name-surname-div label::after{
+    content: "*";
+    color: red;
+}
+.name-div{
+    flex-direction: column;
+    display: flex;
+    flex-basis: 45%;
+}
+.name-div input{
+    width: 100%;
+}
+.surname-div{
+    flex-direction: column;
+    flex-basis: 45%;
+    display: flex;
+}
+.surname-div input{
+    width: 100%;
+}
+.date-gender-div{
+    display: flex;
+    justify-content: space-between;
+}
+.date-div{
+    flex-basis: 45%;
+}
+.date-div input{
+    width: 57%;
+}
+.gender-div{
+    display: flex;
+    flex-basis: 45%;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.gender-div span{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+.gender-div span input{
+    margin-top: 2px;
+}
+.email-div, .phone-div{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.new-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+}
+.delete{
+    display: none !important;
+}
+.del-button{
+    border: 1px solid black;
+    padding: 3px 7px;
+    cursor: pointer;
+    user-select: none;
+}
+.del-button:hover{
+    background: red;
+}
+.email-div input, .phone-div input{
+    width: 70%;
+}
+.add-email,.add-phone,.add-degree,.add-job,.add-language,.add-qualification{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+    padding: 4px;
+    color: blue;
+}
+.add-email:hover,.add-phone:hover,.add-degree:hover,.add-job:hover,.add-language:hover,.add-qualification:hover{
+    background: #999;
+}
+.address-div1,.address-div2{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.address-div1 input,.address-div2 input{
+    width: 90%;
+}
+.post-city-country{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.post-div,.city-div,.country-div{
+    display: flex;
+    flex-direction: column;
+}
+.first-submit-cancel-div{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 90%;
+    gap: 6px;
+}
+#cancel-1{
+    height: 100%;
+    padding: 0 2px;
+    user-select: none;
+    border: none;
+    background-color: red;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.stage3{
+    position: absolute;
+    background: #ddd;
+    width: 60%;
+    height: 583px;
+    padding: 10px;
+    overflow-x: hidden;
+    transform: translateX(150%);
+}
+#form3{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#form3 .up{
+    display: flex;
+    flex-basis: 90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#form3 .down{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 20%;
+    overflow-y: auto;
+
+}
+.education-job,.skills{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-basis: 50%;
+    padding-right: 5px;
+}
+.degree-wrapper,.new-degree-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.new-degree-wrapper{
+    position: relative;
+}
+.degree select{
+    width: 35%;
+    height: 20px;
+}
+.major{
+    display: none;
+}
+.job-toggle{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.toggle-text{
+    display: flex;
+    width: 37%;
+    align-items: center;
+    justify-content: space-between;
+}
+.toggle{
+    background: #aaa;
+    width: 32px;
+    height: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: all 1s;
+    padding: 2px;
+    border-radius: 6px;
+    box-shadow: inset;
+}
+.circle{
+    transition: .2s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgb(88, 88, 88);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.circle.active{
+    position: absolute;
+    left: 17px;
+    top: 0;
+    background: blue;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.job-wrapper,.new-job-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.new-job-wrapper{
+    position: relative;
+}
+.organization-job,.job,.organization-degree,.degree,.about,.major,.qualification,.new-qualification{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.new-qualification{
+    position: relative;
+}
+.del-new-qualification{
+    position: absolute;
+    right: 84px;
+    bottom: 2px;
+    padding: 2px 3px;
+    border: 1px solid black;
+    user-select: none;
+    cursor: pointer;
+}
+.del-new-qualification:hover{
+    background: red;
+}
+.experience{
+    display: flex;
+    gap: 3px;
+}
+.organization-job input,.job input,.organization-degree input,.major input,.qualification input,.new-job-wrapper input{
+    width: 70%;
+    height: 28px;
+    padding: 2px 5px 2px 5px;
+}
+.del-new-job-wrapper,.delete-new-degree-wrapper{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 4px 8px;
+    background: #666;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.del-new-job-wrapper:hover,.delete-new-degree-wrapper:hover{
+    background: red;
+}
+.skills{
+    display: flex;
+    flex-direction: column;
+}
+.language-skill-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.language-skill,.new-language-skill{
+    display: flex;
+    gap: 5px;
+}
+.del-new-language-skill{
+    padding: 2px 3px;
+    border: 1px solid black;
+    user-select: none;
+    cursor: pointer;
+}
+.del-new-language-skill:hover{
+    background: red;
+}
+.label-counter{
+    display: flex;
+    justify-content: space-between;
+}
+.about{
+    width: 55%;
+}
+#about{
+    padding: 3px 5px 3px 5px;
+    resize: vertical;
+}
+.second-submit-cancel-div{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    width: 13%;
+    justify-content: right;
+    gap: 6px;
+}
+#cancel-2{
+    padding: 4px 4px;
+    user-select: none;
+    border: none;
+    background-color: red;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#submit-1{
+    padding: 4px 4px;
+    border: none;
+    background-color: dodgerblue;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#submit-2{
+    padding: 4px 4px;
+    border: none;
+    background-color: dodgerblue;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.stage4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateX(150%);
+    width: 50%;
+    height: 580px;
+}
+#generate{
+    cursor: pointer;
+    border-radius: 4px;
+    background: #28a745;
+    padding: 10px;
+    font-weight: 600;
+    color: #fff;
+}
+@keyframes appear{
+    0%{
+        transform: translateX(150%);
+    }
+    80%{
+        transform: translateX(-10%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes disappear{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-150%);
+    }
+}
+@keyframes upmessage{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+}
+@keyframes upstage1{
+    to{
+        opacity: 0;
+    }
+}
+@keyframes goes{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(150%);
+    }
+}
+@keyframes return{
+    0%{
+        transform: translateX(-150%);
+    }
+    80%{
+        transform: translateX(10%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./cv.css">
+    <script src="./script.js" defer></script>
+    <title>CV generator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="progress-next">
+            <button id="previous" disabled><i class="fa-solid fa-backward"></i></button>
+            <div class="progress">
+                <div class="start-block">
+                    <div class="start">
+                        <div class="start-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" id="svg-1"><path d="M352 0C369.7 0 384 14.33 384 32C384 49.67 369.7 64 352 64V74.98C352 117.4 335.1 158.1 305.1 188.1L237.3 256L305.1 323.9C335.1 353.9 352 394.6 352 437V448C369.7 448 384 462.3 384 480C384 497.7 369.7 512 352 512H32C14.33 512 0 497.7 0 480C0 462.3 14.33 448 32 448V437C32 394.6 48.86 353.9 78.86 323.9L146.7 256L78.86 188.1C48.86 158.1 32 117.4 32 74.98V64C14.33 64 0 49.67 0 32C0 14.33 14.33 0 32 0H352zM259.9 369.1L192 301.3L124.1 369.1C106.1 387.1 96 411.6 96 437V448H288V437C288 411.6 277.9 387.1 259.9 369.1V369.1z"/></svg>
+                        </div>
+                        <span class="line"></span>
+                    </div>
+                    <span>Start</span>
+                </div>
+                <div class="personal-info-block">
+                    <div class="personal-info">
+                        <span class="line"></span>
+                        <div class="personal-info-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" id="svg-2"><path d="M160 448h-32V224c0-17.69-14.33-32-32-32L32 192c-17.67 0-32 14.31-32 32s14.33 31.1 32 31.1h32v192H32c-17.67 0-32 14.31-32 32s14.33 32 32 32h128c17.67 0 32-14.31 32-32S177.7 448 160 448zM96 128c26.51 0 48-21.49 48-48S122.5 32.01 96 32.01s-48 21.49-48 48S69.49 128 96 128z"/></svg>
+                        </div>
+                        <span class="line"></span>
+                    </div>
+                    <span id="special-info">Personal Info</span>
+                </div>
+                <div class="background-block">
+                    <div class="background">
+                        <span class="line"></span>
+                        <div class="background-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="svg-3"><path d="M45.63 79.75L52 81.25v58.5C45 143.9 40 151.3 40 160c0 8.375 4.625 15.38 11.12 19.75L35.5 242C33.75 248.9 37.63 256 43.13 256h41.75c5.5 0 9.375-7.125 7.625-13.1L76.88 179.8C83.38 175.4 88 168.4 88 160c0-8.75-5-16.12-12-20.25V87.13L128 99.63l.001 60.37c0 70.75 57.25 128 128 128s127.1-57.25 127.1-128L384 99.62l82.25-19.87c18.25-4.375 18.25-27 0-31.5l-190.4-46c-13-3-26.62-3-39.63 0l-190.6 46C27.5 52.63 27.5 75.38 45.63 79.75zM359.2 312.8l-103.2 103.2l-103.2-103.2c-69.93 22.3-120.8 87.2-120.8 164.5C32 496.5 47.53 512 66.67 512h378.7C464.5 512 480 496.5 480 477.3C480 400 429.1 335.1 359.2 312.8z"/></svg>
+                        </div>
+                        <span class="line"></span>
+                    </div>
+                    <span>Background</span>
+                </div>
+                <div class="template-block">
+                    <div class="template">
+                        <span class="line"></span>
+                        <div class="template-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" id="svg-4"><path d="M336 64h-53.88C268.9 26.8 233.7 0 192 0S115.1 26.8 101.9 64H48C21.5 64 0 85.48 0 112v352C0 490.5 21.5 512 48 512h288c26.5 0 48-21.48 48-48v-352C384 85.48 362.5 64 336 64zM192 64c17.67 0 32 14.33 32 32s-14.33 32-32 32S160 113.7 160 96S174.3 64 192 64zM282.9 262.8l-88 112c-4.047 5.156-10.02 8.438-16.53 9.062C177.6 383.1 176.8 384 176 384c-5.703 0-11.25-2.031-15.62-5.781l-56-48c-10.06-8.625-11.22-23.78-2.594-33.84c8.609-10.06 23.77-11.22 33.84-2.594l36.98 31.69l72.52-92.28c8.188-10.44 23.3-12.22 33.7-4.062C289.3 237.3 291.1 252.4 282.9 262.8z"/></svg>
+                        </div>
+                    </div>
+                    <span>Template</span>
+                </div>
+            </div>
+            <button id="next" disabled><i class="fa-solid fa-forward"></i></button>
+        </div>
+        <div class="stage-container">
+            <div class="stage1">
+                <div class="opacity0">
+
+                </div>
+                <div class="opacity-more">
+                    <div class="message">
+                        <h1>Welcome!</h1>
+                        <p>Please, click the "Start" button to create your CV</p>
+                        <button id="startcv">Start</button>
+                    </div>
+                </div>
+            </div>
+            <div class="stage2">
+                <form id="form2">
+                    <div class="img-container">
+                        <div class="img-div"><img src="./account.png" class="image" alt="user's image"></i></div>
+                        <span class="insert-img"><input type="file" id="file" accept="image/*"></span>
+                    </div>
+                    <div class="personal-information">
+                        <h2>
+                            Personal Information
+                            <hr>
+                        </h2>
+                        <div class="name-surname-div">
+                            <div class="name-div">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="surname-div">
+                                <label for="surname">Surname</label>
+                                <input type="text" id="surname" required>
+                            </div>
+                        </div>
+                        <div class="date-gender-div">
+                            <div class="date-div">
+                                <label>Date of birth</label>
+                                <input type="date" id="date">
+                            </div>
+                            <div class="gender-div">
+                                <span class="male-span">
+                                    <label for="male">Male</label>
+                                    <input type="radio" value="Male" name="gender" id="male">
+                                </span>
+                                <span class="female-span">
+                                    <label for="female">Female</label>
+                                    <input type="radio" value="Female" name="gender" id="female">
+                                </span>
+                            </div>
+                        </div>
+                        <h2>
+                            Contact Information
+                            <hr>
+                        </h2>
+                        <div class="email-div">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="add-email">
+                            <i class="fa-solid fa-circle-plus"></i>Add
+                        </div>
+                        <div class="phone-div">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="add-phone">
+                            <i class="fa-solid fa-circle-plus"></i>Add
+                        </div>
+                        <h2>
+                            Address
+                            <hr>
+                        </h2>
+                        <div class="address-div1">
+                            <label for="address1">Address line 1</label>
+                            <input type="text" id="address1">
+                        </div>
+                        <div class="address-div1">
+                            <label for="address2">Address line 2</label>
+                            <input type="text" id="address2">
+                        </div>
+                        <div class="post-city-country">
+                            <div class="post-div">
+                                <label for="postal-code">Postal code</label>
+                                <input type="text" id="postal-code">
+                            </div>
+                            <div class="city-div">
+                                <label for="city">City</label>
+                                <input type="text" id="city">
+                            </div>
+                            <div class="country-div">
+                                <label for="country">Country</label>
+                                <input type="text" id="country">
+                            </div>
+                        </div>
+                        <div class="first-submit-cancel-div">
+                            <button id="cancel-1">cancel</button>
+                            <input type="submit" value="save" id="submit-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="stage3">
+                <form id="form3">
+                    <div class="up">
+                        <div class="education-job">
+                            <h2>
+                                Education
+                                <hr>
+                            </h2>
+                            <div class="degree-wrapper">
+                                <div class="degree">
+                                    <label for="degree">The degree you have</label>
+                                    <select name="degree" id="degree" class="select-degree">
+                                        <option value="Select" selected>Select</option>
+                                        <option value="Don't have a degree">Don't have a degree</option>
+                                        <option value="High School">High School</option>
+                                        <option value="Bachelor">Bachelor</option>
+                                        <option value="Master">Master</option>
+                                        <option value="Phd">Phd</option>
+                                    </select>
+                                </div>
+                                <div class="major">
+                                    <label for="major">Specify your major</label>
+                                    <input type="text" id="major">
+                                </div>
+                                <div class="organization-degree">
+                                    <label for="organization-degree">Organization providing education</label>
+                                    <input type="text" id="organization-degree">
+                                </div>
+                            </div>
+                            <div class="add-degree">
+                                <i class="fa-solid fa-circle-plus"></i>Add
+                            </div>
+                            <h2>
+                                Work Experience
+                                <hr>
+                            </h2>
+                            <div class="job-toggle">
+                                <div class="toggle-text">
+                                    <span>I do not have a job</span>
+                                    <div class="toggle">
+                                        <div class="circle">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="job-wrapper">
+                                <div class="job">
+                                    <label for="job">Job title</label>
+                                    <input type="text" id="job">
+                                </div>
+                                <div class="organization-job">
+                                    <label for="organization-job">The organization you worked in</label>
+                                    <input type="text" id="organization-job">
+                                </div>
+                                <div class="experience">
+                                <label for="experience">Work Experience(with years)</label>
+                                <select name="experience" id="experience">
+                                    <option value="Select" selected>Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5+">5+</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="add-job">
+                                <i class="fa-solid fa-circle-plus"></i>Add
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <h2>
+                                Language Skills
+                                <hr>
+                            </h2>
+                            <div class="language-skill-wrapper">
+                                <div class="language-skill">
+                                    <label for="lang">
+                                        <select name="language" id="language">
+                                            <option value="Select" selected>Select</option>
+                                            <option value="Azerbaijani">Azerbaijani</option>
+                                            <option value="English">English</option>
+                                            <option value="Russian">Russian</option>
+                                            <option value="Spanish">Spanish</option>
+                                            <option value="Turkish">Turkish</option>
+                                        </select>
+                                    </label>
+                                    <input id="lang" type="range" max="10" min="1" value="1" step="1"></input>
+                                </div>
+                            </div>
+                            <div class="add-language">
+                                <i class="fa-solid fa-circle-plus"></i>Add
+                            </div>
+                            <h2>
+                                Qualification
+                                <hr>
+                            </h2>
+                            <div class="qualification">
+                                <label for="qualification">Enter your qualification</label>
+                                <input type="text" id="qualification">
+                            </div>
+                            <div class="add-qualification">
+                                <i class="fa-solid fa-circle-plus"></i>Add
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="down">
+                        <div class="about">
+                            <div class="label-counter">
+                                <label for="about">About yourself</label>
+                                <div class="word-counters">
+                                    <span id="word-counter">XXX words,</span>
+                                    <span id="character-counter">XXX characters</span>
+                                </div>
+                            </div>
+                            <textarea name="about" id="about" cols="20" rows="4"></textarea>
+                        </div>
+                        <div class="second-submit-cancel-div">
+                            <button id="cancel-2">cancel</button>
+                            <input type="submit" value="save" id="submit-2">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="stage4">
+                <div class="generate">
+                    <button id="generate">GENERATE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- CV -->
+
+    <div class="main-page1">
+        <div class="personal1">
+            <div class="img-name1">
+                <div class="user-img-name1">
+                    <img class="user-img1" src="" alt="user image">
+                    <h1 class="user-name1">Ibadet Ismayilov</h1>
+                </div>
+                <h2 class="cv-name1">CV generator</h2>
+            </div>
+            <div class="all-personal-info1">
+                <div class="inlines1">
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="about-me1">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="adventure1">
+            <div class="edu-work-lang-qual1">
+                <div class="education1">
+                    <h2>
+                        Education
+                    </h2>
+                    <div class="education-info1">
+                        
+                    </div>
+                </div>
+                <div class="work1">
+                    <h2>
+                        Work experience
+                    </h2>
+                    <div class="job-info1">
+                        
+                    </div>
+                </div>
+                <div class="language1">
+                    <h2>
+                        Language skills
+                    </h2>
+                    <div class="language-info1">
+
+                    </div>
+                </div>
+                <div class="qualification1">
+                    <h2>
+                        Qualification
+                    </h2>
+                    <div class="qualification-info1">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
